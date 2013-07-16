@@ -1,0 +1,78 @@
+/*
+ * Krawall, XM/S3M Modplayer Library
+ * Copyright (C) 2001-2005, 2013 Sebastian Kienzl
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License in COPYING for more details.
+ */
+
+// this file is generated, do not edit.
+// see documentation for detailed information
+
+#ifndef KRAWALL_H__INCLUDED
+#define KRAWALL_H__INCLUDED
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+
+typedef unsigned int chandle;
+typedef unsigned int ihandle;
+
+// internal data structures, revealed what might be of interest
+typedef struct {
+	// number of channels
+	unsigned char	channels;
+	// ...
+} Module;
+
+typedef struct {
+	unsigned long	__private0;
+	unsigned char*	__private1;
+	// neutral frequency
+	unsigned long	c2Freq;
+	signed char		__private2;
+	signed char		__private3;
+	// default volume
+	unsigned char	volDefault;
+	// default pan
+	signed char		panDefault;
+	unsigned char  	loop;
+	// ...
+} Sample;
+
+typedef struct {
+	// ...
+} Instrument;
+
+#endif
+
+extern const Sample* const samples[];
+extern const Instrument* const instruments[];
+
+
+#if __GNUC__ == 2
+	#define kramWorker kramWorkerSTUB
+	#define kramPlay kramPlaySTUB
+	#define kramPlayExt kramPlayExtSTUB
+	#define kramStop kramStopSTUB
+	#define kramSetFreq kramSetFreqSTUB
+	#define kramSetVol kramSetVolSTUB
+	#define kramSetPan kramSetPanSTUB
+	#define kramSetPos kramSetPosSTUB
+	#define LONG_CALL
+#elif __GNUC__ >= 3
+	#define LONG_CALL __attribute__ ((long_call))
+#else
+	#error "This version of Krawall is for GCC2/3 only!!"
+#endif
+

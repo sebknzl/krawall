@@ -1,0 +1,11 @@
+Krawall TODO
+
+- Check if it's working on real hardware
+
+- Look into devkitPro's crt0 and make sure that 
+  a) multiple interrupts are possible and
+  b) IRQ_TIMER1 is not interrupted by any other interrupt
+  (Otherwise, there may be audible clicks)
+
+- Figure out why -O3 results in a non-working library
+
