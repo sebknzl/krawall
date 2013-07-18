@@ -29,8 +29,16 @@ typedef unsigned int uint;
 #endif
 
 #define EWRAM __attribute__((section(".ewram")))
-#define IWRAM __attribute__((section(".iwram")))
-#define IWRAM_CODE __attribute__((section (".iwram.text"),long_call))
+/*
+NOTE:
+If we'd force the section to .iwram here, we would get "section conflict" errors
+from GCC in some files as it doesn't seem to like code and data in the same section (any more?).
+But the default linker-script from devkitPro puts .data and .bss to iwram anyway, so this
+is not needed.
+*/
+#define IWRAM /*__attribute__((section(".iwram")))*/
+
+#define IWRAM_CODE __attribute__((section (".iwram"),long_call))
 #define LONG_CALL __attribute__((long_call))
 
 #endif
