@@ -32,7 +32,7 @@ Requirements:
 Make sure you have the DEVKITPRO/DEVKITARM environment variables set.
  
 Then, starting build.sh should be all you need on OSX and probably Linux.
-Windows will need Cygwin and probably some tweaking of the CMakeLists. Contact me if you need help.
+I haven't tried building under Windows yet, it will probably require some tweaking of the CMakeLists. Contact me if you need help.
 
 The following CMake-variables can be configured ("ccmake build" or GUI):
 

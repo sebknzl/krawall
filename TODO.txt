@@ -2,10 +2,9 @@ Krawall TODO
 
 - Check if it's working on real hardware
 
-- Look into devkitPro's crt0 and make sure that 
-  a) multiple interrupts are possible and
-  b) IRQ_TIMER1 is not interrupted by any other interrupt
-  (Otherwise, there may be audible clicks)
-
+- Make sure IRQ_TIMER1 is not interrupted BY any other interrupt
+  but can interrupt ANY OTHER interrupt.
+  devkitPro provides mechanisms using libgba already, see the post
+  at http://devkitpro.org/viewtopic.php?f=25&t=7882#p15033
+  
 - Figure out why -O3 results in a non-working library
-
