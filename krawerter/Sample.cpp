@@ -16,6 +16,7 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
+#include <cstring>
 #include "Sample.h"
 #include "Instrument.h"
 #include "Mod.h"
